@@ -221,12 +221,13 @@ h3 {
   font-size: 0.78rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  animation: ticker 18s linear infinite;
+  animation: ticker 22s linear infinite;
 }
 
 .ticker-group {
   white-space: nowrap;
-  padding-right: 1.25rem;
+  flex: 0 0 auto;
+  padding-right: 1.5rem;
 }
 
 @keyframes ticker {
@@ -234,7 +235,7 @@ h3 {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-33.3333%);
   }
 }
 
@@ -308,6 +309,11 @@ h3 {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.public-utility-video {
+  max-width: 430px;
+  justify-self: center;
 }
 
 .object-poster-preview {
