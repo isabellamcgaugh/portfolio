@@ -4,6 +4,7 @@ const modeToggle = document.querySelector("#modeToggle");
 const progressFill = document.querySelector("#progressFill");
 const tiltItems = document.querySelectorAll(".tilt");
 const loopVideos = document.querySelectorAll(".loop-video");
+const clickSequences = document.querySelectorAll(".click-sequence");
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -85,6 +86,48 @@ loopVideos.forEach((video) => {
   );
 
   videoObserver.observe(video);
+});
+
+clickSequences.forEach((sequence) => {
+  const images = Array.from(sequence.querySelectorAll("img"));
+  const hint = sequence.querySelector(".sequence-hint");
+  if (!images.length) return;
+
+  let index = 0;
+  let timer = null;
+
+  const show = (nextIndex) => {
+    images.forEach((img, i) => {
+      img.classList.toggle("active", i === nextIndex);
+    });
+    index = nextIndex;
+  };
+
+  const startAuto = () => {
+    if (timer) return;
+    timer = window.setInterval(() => {
+      show((index + 1) % images.length);
+    }, 900);
+    if (hint) hint.textContent = "Playing";
+  };
+
+  const stopAuto = () => {
+    if (!timer) return;
+    window.clearInterval(timer);
+    timer = null;
+    if (hint) hint.textContent = "Click to play sequence";
+  };
+
+  show(0);
+
+  sequence.addEventListener("click", () => {
+    show((index + 1) % images.length);
+    startAuto();
+  });
+
+  sequence.addEventListener("mouseleave", () => {
+    stopAuto();
+  });
 });
 
 document.addEventListener("click", (event) => {
