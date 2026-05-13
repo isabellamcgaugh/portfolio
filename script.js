@@ -86,3 +86,15 @@ loopVideos.forEach((video) => {
 
   videoObserver.observe(video);
 });
+
+document.addEventListener("click", (event) => {
+  const pulse = document.createElement("span");
+  pulse.className = "click-pulse";
+  pulse.style.left = `${event.clientX}px`;
+  pulse.style.top = `${event.clientY}px`;
+  document.body.appendChild(pulse);
+
+  pulse.addEventListener("animationend", () => {
+    pulse.remove();
+  });
+});
