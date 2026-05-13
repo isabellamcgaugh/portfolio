@@ -309,6 +309,11 @@ h3 {
   gap: 0.55rem;
 }
 
+.tattoo-spreads-preview {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
 .project-media img,
 .project-media video {
   display: block;
@@ -373,6 +378,10 @@ h3 {
   }
 
   .object-poster-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .tattoo-spreads-preview {
     grid-template-columns: 1fr;
   }
 }
