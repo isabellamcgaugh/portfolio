@@ -3,6 +3,7 @@ const navLinks = document.querySelectorAll(".nav a");
 const modeToggle = document.querySelector("#modeToggle");
 const progressFill = document.querySelector("#progressFill");
 const tiltItems = document.querySelectorAll(".tilt");
+const loopVideos = document.querySelectorAll(".loop-video");
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -59,4 +60,29 @@ tiltItems.forEach((item) => {
   item.addEventListener("mouseleave", () => {
     item.style.transform = "perspective(900px) rotateX(0deg) rotateY(0deg)";
   });
+});
+
+loopVideos.forEach((video) => {
+  video.muted = true;
+  const playVideo = () => {
+    video.play().catch(() => {});
+  };
+
+  video.addEventListener("loadeddata", playVideo);
+  playVideo();
+
+  const videoObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          playVideo();
+        } else {
+          video.pause();
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  videoObserver.observe(video);
 });

@@ -299,6 +299,14 @@ h3 {
 
 .loop-video {
   border: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.object-poster-preview {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
 }
 
 .project-media img,
@@ -361,6 +369,10 @@ h3 {
   }
 
   .project-media.two {
+    grid-template-columns: 1fr;
+  }
+
+  .object-poster-preview {
     grid-template-columns: 1fr;
   }
 }
