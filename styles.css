@@ -199,6 +199,13 @@ h3 {
   border-bottom: 1px solid var(--line);
 }
 
+.about-page {
+  max-width: 72ch;
+  display: grid;
+  gap: 1.1rem;
+  padding-bottom: 3rem;
+}
+
 .ticker {
   overflow: hidden;
   border-top: 1px solid var(--line);
@@ -285,8 +292,8 @@ h3 {
 .project-media video,
 .project-media iframe {
   width: 100%;
-  border: 1px solid var(--line);
-  background: var(--surface);
+  border: 0;
+  background: transparent;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
@@ -310,7 +317,7 @@ h3 {
 .project:hover .project-media video,
 .project:hover .project-media iframe {
   transform: translateY(-3px);
-  box-shadow: 0 15px 45px rgba(24, 24, 24, 0.08);
+  box-shadow: none;
 }
 
 .footer {
