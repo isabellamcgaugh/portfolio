@@ -1,0 +1,381 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f8f8f5;
+  --fg: #151515;
+  --line: #d8d8d2;
+  --surface: #ffffff;
+}
+
+body.night {
+  --bg: #101013;
+  --fg: #f2f1ec;
+  --line: #303037;
+  --surface: #1a1a20;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Cutive Mono", monospace;
+  line-height: 1.55;
+  scroll-behavior: smooth;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.16;
+  background-image: radial-gradient(#000 0.6px, transparent 0.6px);
+  background-size: 3px 3px;
+  mix-blend-mode: soft-light;
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 200;
+  background: transparent;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #a7bbff, #ffb9c7, #ffe8ac);
+  transition: width 0.15s linear;
+}
+
+.site {
+  width: min(1200px, 94vw);
+  margin: 0 auto;
+  padding-bottom: 6rem;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(2px);
+  border-bottom: 1px solid var(--line);
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 50;
+}
+
+.site-title {
+  font-size: 1.05rem;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav a {
+  font-size: 0.9rem;
+  text-transform: lowercase;
+  transition: transform 0.2s ease;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.mode-toggle {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--fg);
+  font-family: inherit;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.22rem 0.45rem;
+  cursor: pointer;
+}
+
+.mode-toggle:hover {
+  background: var(--surface);
+}
+
+.intro {
+  padding: 5.5rem 0 4rem;
+}
+
+.name {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 5.5rem);
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.sub {
+  margin-top: 0.9rem;
+  font-size: 0.95rem;
+}
+
+.subtle-tag {
+  margin-top: 1.35rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-ornament {
+  margin-top: 1.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.78rem;
+}
+
+.hero-ornament span {
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  animation: pulse 2.8s ease-in-out infinite;
+}
+
+.hero-ornament span:last-of-type {
+  animation-delay: 0.35s;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.55);
+    opacity: 0.45;
+  }
+}
+
+h2,
+h3,
+p {
+  margin: 0;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1rem;
+  margin-bottom: 0.55rem;
+}
+
+.about {
+  max-width: 72ch;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.ticker {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 2rem;
+  background: color-mix(in srgb, var(--surface) 65%, transparent);
+}
+
+.ticker-track {
+  white-space: nowrap;
+  padding: 0.5rem 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  animation: ticker 26s linear infinite;
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.work {
+  padding-top: 2.4rem;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 1.6rem;
+  padding: 1.8rem 0;
+  border-top: 1px solid var(--line);
+  transition: transform 0.25s ease;
+}
+
+.project:hover {
+  transform: translateX(3px);
+}
+
+.project-meta p {
+  font-size: 0.9rem;
+}
+
+.project-number {
+  font-size: 0.72rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-meta a {
+  display: inline-block;
+  margin-top: 0.8rem;
+  font-size: 0.88rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.tagline {
+  margin-top: 0.65rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+
+.project-media {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+  transition: transform 0.25s ease;
+  transform-style: preserve-3d;
+}
+
+.project-media.two {
+  grid-template-columns: 1fr 1fr;
+}
+
+.project-media img,
+.project-media video,
+.project-media iframe {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.loop-video {
+  border: 0;
+}
+
+.project-media img,
+.project-media video {
+  display: block;
+  min-height: 260px;
+  max-height: 780px;
+  object-fit: contain;
+}
+
+.project-media iframe {
+  min-height: 640px;
+}
+
+.project:hover .project-media img,
+.project:hover .project-media video,
+.project:hover .project-media iframe {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 45px rgba(24, 24, 24, 0.08);
+}
+
+.footer {
+  margin-top: 3rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.footer a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .ticker-track,
+  .hero-ornament span {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .project {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .project-media.two {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .project-media iframe {
+    min-height: 420px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+}

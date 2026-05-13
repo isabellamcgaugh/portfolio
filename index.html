@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Isabella Mcgaugh Portfolio</title>
+    <meta
+      name="description"
+      content="Graphic design and web design portfolio by Isabella Mcgaugh."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="progress-bar" aria-hidden="true"><span id="progressFill"></span></div>
+    <main class="site">
+      <header class="header">
+        <a class="site-title" href="#">Isabella Mcgaugh</a>
+        <nav class="nav">
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="./public/media/resume/isabella-mcgaugh-resume.pdf" target="_blank"
+            >Resume</a
+          >
+          <button id="modeToggle" class="mode-toggle" type="button">Night</button>
+        </nav>
+      </header>
+
+      <section class="intro">
+        <h1 class="name reveal">Isabella Mcgaugh</h1>
+        <p class="sub reveal">Graphic Designer + UX/UI Designer</p>
+        <p class="subtle-tag reveal">Knoxville / 2024-2026 Selected Work</p>
+        <div class="hero-ornament reveal">
+          <span></span>
+          <span></span>
+          <p>Craft + concept + interaction</p>
+        </div>
+      </section>
+
+      <section class="ticker" aria-label="Design disciplines">
+        <div class="ticker-track">
+          graphic design · web design · motion · editorial · ux/ui · graphic
+          design · web design · motion · editorial · ux/ui ·
+        </div>
+      </section>
+
+      <section id="about" class="about reveal">
+        <h2>About</h2>
+        <p>
+          Isabella Mcgaugh is a graphic designer and UX-focused visual
+          storyteller based in Knoxville. She combines editorial systems,
+          typography, and motion to build clean digital and print outcomes that
+          feel precise, expressive, and user-centered.
+        </p>
+      </section>
+
+      <section id="work" class="work">
+        <h2 class="reveal">Selected Work</h2>
+
+        <article class="project reveal" data-accent="#efe0ff">
+          <div class="project-meta">
+            <p class="project-number">01</p>
+            <h3>Local, Host</h3>
+            <p>
+              A multi-page online publication exploring layered typographic
+              storytelling and experimental web navigation.
+            </p>
+            <a href="https://isabellamcgaugh.github.io/project1/" target="_blank"
+              >Visit project</a
+            >
+            <p class="tagline">HTML / CSS / Experimental Publishing</p>
+          </div>
+        </article>
+
+        <article class="project reveal" data-accent="#dff7ef">
+          <div class="project-meta">
+            <p class="project-number">02</p>
+            <h3>Private, Utility</h3>
+            <p>
+              A mood-responsive utility concept where visual tone and interface
+              behavior shift based on daily emotional input.
+            </p>
+            <a href="https://isabellamcgaugh.github.io/zine-app/" target="_blank"
+              >Visit project</a
+            >
+            <p class="tagline">UX / Mood Interface / Interaction</p>
+          </div>
+        </article>
+
+        <article class="project reveal" data-accent="#ffe8d9">
+          <div class="project-meta">
+            <p class="project-number">03</p>
+            <h3>Public, Utility</h3>
+            <p>
+              A public-facing wellbeing utility designed for low-energy
+              accessibility, flexible task levels, and compassionate interaction.
+            </p>
+            <a href="https://isabellamcgaugh.github.io/dustbound-spa/" target="_blank"
+              >Visit project</a
+            >
+            <p class="tagline">Accessibility / Product Thinking / Frontend</p>
+          </div>
+        </article>
+
+        <article class="project reveal" data-accent="#dce8ff">
+          <div class="project-meta">
+            <p class="project-number">04</p>
+            <h3>Magazine Spread</h3>
+            <p>
+              Editorial spread design focused on hierarchy, caption systems, and
+              cohesive product storytelling.
+            </p>
+          </div>
+          <div class="project-media tilt">
+            <img
+              src="./public/media/magazine/magazine-spreads.jpg"
+              alt="Magazine spread by Isabella Mcgaugh"
+            />
+          </div>
+        </article>
+
+        <article class="project reveal" data-accent="#f6efd1">
+          <div class="project-meta">
+            <p class="project-number">05</p>
+            <h3>Found Text + Image</h3>
+            <p>
+              A 14-page accordion booklet pairing archival images and found text
+              to create a sequential visual narrative.
+            </p>
+          </div>
+          <div class="project-media two tilt">
+            <img
+              class="gif-player"
+              src="./public/media/found-images/found-images.gif"
+              alt="Found text and image animated booklet sequence"
+            />
+            <iframe
+              src="./public/media/found-images/found-images-final.pdf"
+              title="Found text and image final booklet"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </article>
+
+        <article class="project reveal" data-accent="#ffdce6">
+          <div class="project-meta">
+            <p class="project-number">06</p>
+            <h3>Object in Motion (Music Box)</h3>
+            <p>
+              Motion poster system translating a music box object study into time,
+              rhythm, and typographic movement.
+            </p>
+          </div>
+          <div class="project-media tilt">
+            <video class="loop-video" autoplay playsinline loop muted>
+              <source
+                src="./public/media/object-motion/object-motion.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+        </article>
+
+        <article class="project reveal" data-accent="#e2f3ff">
+          <div class="project-meta">
+            <p class="project-number">07</p>
+            <h3>Object Poster (Music Box)</h3>
+            <p>
+              Poster design exploring metaphor and connotation around a music box
+              through scale, typography, and image composition.
+            </p>
+          </div>
+          <div class="project-media tilt">
+            <iframe
+              src="./public/media/object-poster/object-poster-final.pdf"
+              title="Object poster final"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </article>
+
+        <article class="project reveal" data-accent="#f0eadf">
+          <div class="project-meta">
+            <p class="project-number">08</p>
+            <h3>Type Specimen Poster</h3>
+            <p>
+              A grid-based type specimen poster presenting typographic range,
+              anatomy, and visual hierarchy in a single system.
+            </p>
+          </div>
+          <div class="project-media tilt">
+            <iframe
+              src="./public/media/type-specimen/type-specimen-final.pdf"
+              title="Type specimen poster final"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </article>
+      </section>
+
+      <footer id="contact" class="footer reveal">
+        <p>isabella.mcgaugh@gmail.com</p>
+        <a href="mailto:isabella.mcgaugh@gmail.com">Email</a>
+      </footer>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
